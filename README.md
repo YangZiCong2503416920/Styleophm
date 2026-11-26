@@ -2,6 +2,8 @@
 
 **StyleX 思路的 HarmonyOS ArkUI 样式库**：用「命名 token + 类型化 `AttributeModifier`」替代动态样式对象，写法接近 StyleX，但完全符合 ArkTS 严格模式（无索引签名、无 `any`、无动态属性访问）。
 
+> Typed style primitives & design tokens for ArkUI — named tokens, reusable `AttributeModifier` presets, dark-mode ready, zero `any`.
+
 ```ts
 import { PactBox, PactText, StylexColor } from 'styleophm';
 
