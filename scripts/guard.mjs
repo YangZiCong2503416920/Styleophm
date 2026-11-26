@@ -60,7 +60,27 @@ record(missing.length === 0, 'required files', missing.length === 0 ? `${REQUIRE
   : `missing: ${missing.join(', ')}`);
 
 // -----------------------------------------------------------------------------
-// 2. 深浅色颜色表
+// 2. ohpm 发布物料：README / CHANGELOG / LICENSE 必须在库模块内（HAR 只打包模块目录）
+// -----------------------------------------------------------------------------
+const PACKAGE_DOCS = ['styleophm/README.md', 'styleophm/CHANGELOG.md', 'styleophm/LICENSE'];
+const missingDocs = PACKAGE_DOCS.filter((p) => !existsSync(join(ROOT, p)));
+record(missingDocs.length === 0, 'package docs in module',
+  missingDocs.length === 0 ? `${PACKAGE_DOCS.length} files shipped inside styleophm/`
+    : `missing: ${missingDocs.join(', ')}`);
+
+const mirrors = [
+  ['LICENSE', 'styleophm/LICENSE'],
+  ['CHANGELOG.md', 'styleophm/CHANGELOG.md']
+];
+const drifted = mirrors.filter(([rootFile, moduleFile]) =>
+  existsSync(join(ROOT, rootFile)) && existsSync(join(ROOT, moduleFile)) &&
+  read(rootFile).replace(/\r\n/g, '\n') !== read(moduleFile).replace(/\r\n/g, '\n'));
+record(drifted.length === 0, 'package docs in sync',
+  drifted.length === 0 ? 'LICENSE / CHANGELOG copies match the repo root'
+    : `drifted: ${drifted.map(([a, b]) => `${a} -> ${b}`).join(', ')}`);
+
+// -----------------------------------------------------------------------------
+// 3. 深浅色颜色表
 // -----------------------------------------------------------------------------
 const baseColors = JSON.parse(read('styleophm/src/main/resources/base/element/color.json')).color;
 const darkColors = JSON.parse(read('styleophm/src/main/resources/dark/element/color.json')).color;

@@ -2,6 +2,20 @@
 
 ohpm（OpenHarmony 包管理）就是鸿蒙侧的 npm：`ohpm install <name>` 从 `https://ohpm.openharmony.cn/ohpm/` 拉包。发布需要一个账号体系外的凭证：**publish_id + 私钥（带非空口令）+ 已上传的公钥**。
 
+官方流程：[发布共享包（DevEco 文档）](https://developer.huawei.com/consumer/cn/doc/HarmonyOS-Guides/ide-hmos-har-publish)｜[ohpm publish 命令](https://developer.huawei.com/consumer/en/doc/doccenter-deveco-studio/ide-ohpm-publish)
+
+## 官方要求的物料清单（都已就位）
+
+| 官方要求 | 本仓库位置 | 备注 |
+| --- | --- | --- |
+| 库模块内 `README.md` | `styleophm/README.md` | 英文短版，直接作为 ohpm 包详情页 |
+| 库模块内 `CHANGELOG.md` | `styleophm/CHANGELOG.md` | 与仓库根同名文件保持同步（guard 校验） |
+| 库模块内 `LICENSE` | `styleophm/LICENSE` | MIT，同上 |
+| 编译出的 `*.har` | `styleophm/build/default/outputs/default/styleophm.har` | `--build-mode release` 产出 |
+| 公钥已上传 + `publish_id` | 见下 | 只有账号持有人能做 |
+
+> 三个文档必须放在**模块目录**里（与 `src` 同级），因为 HAR 只打包模块目录；放在仓库根会进不了包。
+
 本机已经准备好的部分：
 
 | 物料 | 路径 |
@@ -23,6 +37,14 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+gNPLNVtqJLl76vpe5fUa8W6XMf2cJceEEKIz4RxA
 > 公钥可以随便公开；私钥和口令不要提交、不要贴到聊天里。想换钥匙就重新 `ssh-keygen -t rsa -b 4096 -m PEM -f <新路径>` 并在控制台上替换公钥。
 
 ## 然后一条命令
+
+先把私钥路径和发布码写进 `.ohpmrc`（脚本也支持直接传参）：
+
+```bash
+ohpm config set key_path "C:\Users\<you>\.ohpm\keys\styleophm_rsa"
+ohpm config set publish_id <你的发布码>
+ohpm config set publish_registry https://ohpm.openharmony.cn/ohpm/
+```
 
 ```powershell
 $env:OHPM_PUBLISH_ID = '<你的 publish_id>'
