@@ -11,12 +11,6 @@ export {
   StylexTextSpec
 } from './src/main/ets/Stylex';
 
-export { StylexToken } from './src/main/ets/StylexTokens';
+export { StylexColor, StylexToken } from './src/main/ets/StylexTokens';
 
-export {
-  PactAccent,
-  PactBox,
-  PactButton,
-  PactTag,
-  PactText
-} from './src/main/ets/PactStyles';
+export { PactAccent, PactBox, PactButton, PactLayer, PactStage, PactTag, PactText } from './src/main/ets/PactStyles';

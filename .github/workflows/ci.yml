@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  guard:
+    name: static guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Guard rules (tokens, palette, exports, strict mode)
+        run: node scripts/guard.mjs
+
+  build:
+    name: hvigor build (self-hosted, needs HarmonyOS SDK)
+    # 仓库变量 DEVECO_HOME 指向 DevEco Studio 安装目录时才运行；
+    # GitHub 托管 runner 没有 HarmonyOS SDK，因此默认跳过而不是伪装成通过。
+    if: ${{ vars.DEVECO_HOME != '' }}
+    runs-on: [self-hosted, harmonyos]
+    needs: guard
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build HAR and showcase HAP
+        run: devecocli build --build-mode release
+      - name: Upload HAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: styleophm-har
+          path: styleophm/build/default/outputs/default/styleophm.har
+          if-no-files-found: error

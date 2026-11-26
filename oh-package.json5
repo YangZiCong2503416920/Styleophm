@@ -1,6 +1,9 @@
 {
   "modelVersion": "26.0.1",
+  "name": "styleophm-project",
+  "version": "1.0.0",
   "description": "Styleophm: typed style primitives and design tokens for HarmonyOS ArkUI.",
+  "license": "MIT",
   "dependencies": {
   },
   "devDependencies": {

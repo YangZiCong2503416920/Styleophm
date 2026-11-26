@@ -1,0 +1,11 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Styleophm visual regression showcase (entry HAP).",
+  "main": "",
+  "author": "YangZiCong",
+  "license": "MIT",
+  "dependencies": {
+    "styleophm": "file:../styleophm"
+  }
+}

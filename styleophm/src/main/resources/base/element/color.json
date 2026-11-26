@@ -1,0 +1,31 @@
+{
+  "color": [
+    { "name": "ink", "value": "#1B2438" },
+    { "name": "ink_soft", "value": "#6B7794" },
+    { "name": "ink_faint", "value": "#8A93A8" },
+    { "name": "brand", "value": "#17345C" },
+    { "name": "brand_deep", "value": "#102642" },
+    { "name": "brand_soft", "value": "#E9EEF8" },
+    { "name": "gold", "value": "#C9A227" },
+    { "name": "gold_soft", "value": "#FAF2DA" },
+    { "name": "surface", "value": "#FFFFFF" },
+    { "name": "surface_soft", "value": "#F8FAFD" },
+    { "name": "canvas", "value": "#F3F5FA" },
+    { "name": "line", "value": "#E2E7F2" },
+    { "name": "neutral_soft", "value": "#F1F3F8" },
+    { "name": "danger", "value": "#C0392B" },
+    { "name": "danger_soft", "value": "#FBEDEB" },
+    { "name": "success", "value": "#1F8A5B" },
+    { "name": "violet", "value": "#6C4BD8" },
+    { "name": "violet_soft", "value": "#EFEBFC" },
+    { "name": "green_soft", "value": "#E6F4EC" },
+    { "name": "amber", "value": "#B07A12" },
+    { "name": "amber_soft", "value": "#FBF1DD" },
+    { "name": "slate", "value": "#41508C" },
+    { "name": "slate_soft", "value": "#E9ECF8" },
+    { "name": "on_dark", "value": "#FFFFFF" },
+    { "name": "on_dark_soft", "value": "#C9D6EC" },
+    { "name": "on_dark_gold", "value": "#F0D98A" },
+    { "name": "on_dark_brand", "value": "#2A4A72" }
+  ]
+}
