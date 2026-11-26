@@ -282,7 +282,7 @@ export class PactButton {
     height: PactMetric.BUTTON_HEIGHT_PRIMARY,
     size: StylexToken.FONT_BODY_LG,
     weight: FontWeight.Medium,
-    color: StylexColor.ON_DARK,
+    color: StylexColor.ON_BRAND,
     background: StylexColor.BRAND,
     radius: StylexToken.RADIUS_PILL,
     pressedBackground: StylexColor.BRAND_DEEP
@@ -308,7 +308,7 @@ export class PactButton {
   static readonly SMALL: StylexButton = new StylexButton({
     height: PactMetric.BUTTON_HEIGHT_SMALL,
     size: StylexToken.FONT_LABEL,
-    color: StylexColor.ON_DARK,
+    color: StylexColor.ON_BRAND,
     background: StylexColor.BRAND,
     radius: StylexToken.RADIUS_PILL,
     pressedBackground: StylexColor.BRAND_DEEP

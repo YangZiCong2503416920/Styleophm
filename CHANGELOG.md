@@ -2,6 +2,27 @@
 
 格式参照 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.1.0] - 2026-11-27
+
+真实项目 PactFive（39 个 .ets、17 处 import、85 处硬编码色值）完成全量迁移后发布的版本。迁移把 81 处十六进制色值换成 `StylexColor`，并让整个 App 首次获得深色模式。
+
+### Added
+
+- 新增 6 个颜色 token：`BRAND_LIGHT`（品牌浅一档）、`GOLD_DEEP`（金色描边）、`ON_DARK_MUTED` / `ON_DARK_FAINT`（深色底前景的三、四级）、`ON_DARK_DANGER`（深色底危险色）、`ON_BRAND`（品牌底色上的字，深色主题自动切近黑，避免白字贴浅蓝底）；
+- 调色板 27 → 33 个键，`base` / `dark` 两套同步；
+- 新增 `docs/pactfive-light.jpg`、`docs/pactfive-dark.jpg`：真实项目深浅色真机对比。
+
+### Changed
+
+- **所有颜色资源名加 `stylex_` 前缀**（`app.color.brand` → `app.color.stylex_brand`）。原因：作为预构建 HAR 被宿主消费时，`app.color.brand` 会与系统 `sys.color.brand` 撞名，运行期解析成系统亮蓝 `#0A59F7`，整站品牌色变蓝。前缀化后恢复正常；
+- `PactButton.PRIMARY` / `PactButton.SMALL` 的文字色从 `ON_DARK` 改为 `ON_BRAND`，修复深色主题下白字压浅蓝底的对比度问题；
+- README 重写第一屏：`@Styles` / `@Extend` / Styleophm 能力对照表、30 行前后对比、PactFive 迁移数据。
+
+### Notes
+
+- 宿主升级指引：把 `app.color.<name>` 换成 `app.color.stylex_<name>`；用 `StylexColor.*` 的代码无需改动；
+- 版本号 1.0.0 → 1.1.0（新增 token 兼容，资源改名属破坏性变更，但 1.0.0 未对外发布过）。
+
 ## [1.0.0] - 2026-11-27
 
 首个可用版本：核心修饰器 + 两级 token + 深浅色 + 示例工程。

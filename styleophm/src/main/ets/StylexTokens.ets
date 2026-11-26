@@ -36,12 +36,21 @@ export class StylexToken {
   static readonly AMBER_SOFT: string = '#FBF1DD';
   static readonly SLATE: string = '#41508C';
   static readonly SLATE_SOFT: string = '#E9ECF8';
+  /** 品牌色的浅一档，用于次级按钮/描边等需要比 BRAND 轻的场合 */
+  static readonly BRAND_LIGHT: string = '#2E5A96';
+  /** 金色描边（GOLD_SOFT 底上的边框） */
+  static readonly GOLD_DEEP: string = '#8A7430';
 
   /** 深色底上的前景色：始终明亮，不参与深浅色切换 */
   static readonly ON_DARK: string = '#FFFFFF';
   static readonly ON_DARK_SOFT: string = '#C9D6EC';
+  static readonly ON_DARK_MUTED: string = '#AFC0DB';
+  static readonly ON_DARK_FAINT: string = '#8FA3C4';
   static readonly ON_DARK_GOLD: string = '#F0D98A';
+  static readonly ON_DARK_DANGER: string = '#FFB4A8';
   static readonly ON_DARK_BRAND: string = '#2A4A72';
+  /** BRAND 底色上的前景色：浅色主题白字，深色主题（BRAND 变亮）用近黑字 */
+  static readonly ON_BRAND: string = '#FFFFFF';
 
   // ---------------------------------------------------------------------------
   // 间距（4dp 网格）
@@ -96,32 +105,38 @@ export class StylexToken {
  * 深浅色随系统自动切换。所有 Spec 的颜色字段都接受这些 ResourceColor。
  */
 export class StylexColor {
-  static readonly INK: ResourceColor = $r('app.color.ink');
-  static readonly INK_SOFT: ResourceColor = $r('app.color.ink_soft');
-  static readonly INK_FAINT: ResourceColor = $r('app.color.ink_faint');
-  static readonly BRAND: ResourceColor = $r('app.color.brand');
-  static readonly BRAND_DEEP: ResourceColor = $r('app.color.brand_deep');
-  static readonly BRAND_SOFT: ResourceColor = $r('app.color.brand_soft');
-  static readonly GOLD: ResourceColor = $r('app.color.gold');
-  static readonly GOLD_SOFT: ResourceColor = $r('app.color.gold_soft');
-  static readonly SURFACE: ResourceColor = $r('app.color.surface');
-  static readonly SURFACE_SOFT: ResourceColor = $r('app.color.surface_soft');
-  static readonly CANVAS: ResourceColor = $r('app.color.canvas');
-  static readonly LINE: ResourceColor = $r('app.color.line');
-  static readonly NEUTRAL_SOFT: ResourceColor = $r('app.color.neutral_soft');
-  static readonly DANGER: ResourceColor = $r('app.color.danger');
-  static readonly DANGER_SOFT: ResourceColor = $r('app.color.danger_soft');
-  static readonly SUCCESS: ResourceColor = $r('app.color.success');
-  static readonly VIOLET: ResourceColor = $r('app.color.violet');
-  static readonly VIOLET_SOFT: ResourceColor = $r('app.color.violet_soft');
-  static readonly GREEN_SOFT: ResourceColor = $r('app.color.green_soft');
-  static readonly AMBER: ResourceColor = $r('app.color.amber');
-  static readonly AMBER_SOFT: ResourceColor = $r('app.color.amber_soft');
-  static readonly SLATE: ResourceColor = $r('app.color.slate');
-  static readonly SLATE_SOFT: ResourceColor = $r('app.color.slate_soft');
+  static readonly INK: ResourceColor = $r('app.color.stylex_ink');
+  static readonly INK_SOFT: ResourceColor = $r('app.color.stylex_ink_soft');
+  static readonly INK_FAINT: ResourceColor = $r('app.color.stylex_ink_faint');
+  static readonly BRAND: ResourceColor = $r('app.color.stylex_brand');
+  static readonly BRAND_DEEP: ResourceColor = $r('app.color.stylex_brand_deep');
+  static readonly BRAND_SOFT: ResourceColor = $r('app.color.stylex_brand_soft');
+  static readonly GOLD: ResourceColor = $r('app.color.stylex_gold');
+  static readonly GOLD_SOFT: ResourceColor = $r('app.color.stylex_gold_soft');
+  static readonly SURFACE: ResourceColor = $r('app.color.stylex_surface');
+  static readonly SURFACE_SOFT: ResourceColor = $r('app.color.stylex_surface_soft');
+  static readonly CANVAS: ResourceColor = $r('app.color.stylex_canvas');
+  static readonly LINE: ResourceColor = $r('app.color.stylex_line');
+  static readonly NEUTRAL_SOFT: ResourceColor = $r('app.color.stylex_neutral_soft');
+  static readonly DANGER: ResourceColor = $r('app.color.stylex_danger');
+  static readonly DANGER_SOFT: ResourceColor = $r('app.color.stylex_danger_soft');
+  static readonly SUCCESS: ResourceColor = $r('app.color.stylex_success');
+  static readonly VIOLET: ResourceColor = $r('app.color.stylex_violet');
+  static readonly VIOLET_SOFT: ResourceColor = $r('app.color.stylex_violet_soft');
+  static readonly GREEN_SOFT: ResourceColor = $r('app.color.stylex_green_soft');
+  static readonly AMBER: ResourceColor = $r('app.color.stylex_amber');
+  static readonly AMBER_SOFT: ResourceColor = $r('app.color.stylex_amber_soft');
+  static readonly SLATE: ResourceColor = $r('app.color.stylex_slate');
+  static readonly SLATE_SOFT: ResourceColor = $r('app.color.stylex_slate_soft');
+  static readonly BRAND_LIGHT: ResourceColor = $r('app.color.stylex_brand_light');
+  static readonly GOLD_DEEP: ResourceColor = $r('app.color.stylex_gold_deep');
 
-  static readonly ON_DARK: ResourceColor = $r('app.color.on_dark');
-  static readonly ON_DARK_SOFT: ResourceColor = $r('app.color.on_dark_soft');
-  static readonly ON_DARK_GOLD: ResourceColor = $r('app.color.on_dark_gold');
-  static readonly ON_DARK_BRAND: ResourceColor = $r('app.color.on_dark_brand');
+  static readonly ON_DARK: ResourceColor = $r('app.color.stylex_on_dark');
+  static readonly ON_DARK_SOFT: ResourceColor = $r('app.color.stylex_on_dark_soft');
+  static readonly ON_DARK_MUTED: ResourceColor = $r('app.color.stylex_on_dark_muted');
+  static readonly ON_DARK_FAINT: ResourceColor = $r('app.color.stylex_on_dark_faint');
+  static readonly ON_DARK_GOLD: ResourceColor = $r('app.color.stylex_on_dark_gold');
+  static readonly ON_DARK_DANGER: ResourceColor = $r('app.color.stylex_on_dark_danger');
+  static readonly ON_DARK_BRAND: ResourceColor = $r('app.color.stylex_on_dark_brand');
+  static readonly ON_BRAND: ResourceColor = $r('app.color.stylex_on_brand');
 }
