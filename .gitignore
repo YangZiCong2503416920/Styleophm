@@ -1,0 +1,32 @@
+# Dependencies
+/node_modules
+/oh_modules
+**/oh_modules
+
+# Build output
+**/build
+**/BuildProfile.ets
+/.hvigor
+/.cache
+/.appanalyzer
+**/.test
+.cxx
+
+# IDE / local tooling
+/.idea
+/local.properties
+/.clangd
+/.clang-format
+/.clang-tidy
+
+# Local signing config
+/build-profile.local.json5
+
+# Environment files
+.env
+.env.*
+
+# OS noise
+*.log
+Thumbs.db
+.DS_Store

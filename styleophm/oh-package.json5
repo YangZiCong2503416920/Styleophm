@@ -1,0 +1,9 @@
+{
+  "name": "styleophm",
+  "version": "1.0.0",
+  "description": "Typed AttributeModifier style primitives and design tokens for HarmonyOS ArkUI.",
+  "main": "Index.ets",
+  "author": "YangZiCong",
+  "license": "",
+  "dependencies": {}
+}
