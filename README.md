@@ -264,6 +264,17 @@ devecocli check lint            # DevEco Code Linter
 - 模块类型：HAR；示例工程：HAP
 - 工具：DevEco Studio / `devecocli`（自带 hvigor + ohpm）
 
+## 发布到 ohpm
+
+ohpm 就是鸿蒙侧的 npm。物料与报错对照见 [docs/publishing.md](docs/publishing.md)，配好 publish_id 后一条命令：
+
+```powershell
+$env:OHPM_PUBLISH_ID = '<你的 publish_id>'
+pwsh scripts/publish.ps1
+```
+
+之后使用方就能 `ohpm install styleophm`。
+
 ## 版本
 
 - 变更记录见 [CHANGELOG.md](CHANGELOG.md)
