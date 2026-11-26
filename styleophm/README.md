@@ -27,17 +27,18 @@ Button('保存').attributeModifier(PactButton.PRIMARY)
 
 ## Install
 
-```json5
-// in the consumer module's oh-package.json5
-{
-  "dependencies": {
-    "styleophm": "file:./libs/styleophm.har"
-  }
-}
+```bash
+ohpm install styleophm
 ```
 
-```bash
-ohpm install
+Or add it to the consumer module's `oh-package.json5` and sync:
+
+```json5
+{
+  "dependencies": {
+    "styleophm": "^1.1.0"
+  }
+}
 ```
 
 ## What you get

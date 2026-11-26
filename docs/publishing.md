@@ -71,13 +71,20 @@ ohpm view styleophm          # 看版本、依赖、README
 
 ## 常见报错对照
 
-| 报错 | 原因 |
+第一次发布时实际踩到的坑，按出现顺序：
+
+| 报错 | 原因与修法 |
 | --- | --- |
 | `00609002 Key Path Is Empty Or NotFound` | 没传 `--key_path`，或 `.ohpmrc` 里没有 `key_path` |
 | `00609007 Not Support PrivateKey` | 私钥没有口令；ohpm 强制要求加密私钥 |
-| `0060900x ... publish_id` 相关 | 控制台没复制 publish_id，或公钥没上传/不匹配 |
-| `the har file contains source code` | 只是警告：HAR 会带上 `src/main/ets` 源码与 `.d.ets`，HAR 的常规形态 |
-| 版本已存在 | 同一个 `version` 不能重复发布，改 `styleophm/oh-package.json5` 的 `version` 后重新构建 |
+| `s.stdin.setRawMode is not a function` | 口令提示必须有真实终端；用 `python scripts/publish_pty.py` 起伪终端，或直接在 Windows Terminal 里手动跑 |
+| `HttpCode 400 ... no author url or a author email` | `author` 只有名字。补 `url` 或 `email` |
+| `InValid Author Content Error: author.email is invalid` | ohpm 的邮箱正则 `^[a-zA-Z0-9_\-.]+@[a-zA-Z0-9_\-.]+$` **不允许 `+`**，GitHub 的 `id+user@users.noreply.github.com` 会挂。要么用普通邮箱，要么只填 `url` |
+| `Invalid OHPM package repository ... must start with https|http|ftp|rtsp|mms` | `repository` 必须是**字符串** URL，不能写 `{type, url}` 对象 |
+| `readme.md file no ohpm install command` | README 里必须出现 `ohpm install styleophm`（或 `ohpm i styleophm`） |
+| `the har file contains source code` | 只是警告：HAR 会带上 `src/main/ets` 源码与 `.d.ets` |
+| `+styleophm 1.1.0 ... under review` | 成功提交，等人工审核；审核期间 `ohpm info styleophm` 仍是 404 |
+| 版本已存在 | 同一个 `version` 不能重复发布，改版本号后重新构建 |
 
 ## 版本策略
 

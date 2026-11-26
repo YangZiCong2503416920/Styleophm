@@ -3,7 +3,11 @@
   "version": "1.1.0",
   "description": "Typed AttributeModifier style primitives and design tokens for HarmonyOS ArkUI.",
   "main": "Index.ets",
-  "author": "YangZiCong",
+  "author": {
+    "name": "YangZiCong",
+    "email": "YangZC2503416920@163.com",
+    "url": "https://github.com/YangZiCong2503416920"
+  },
   "license": "MIT",
   "keywords": [
     "harmonyos",
@@ -15,9 +19,6 @@
     "dark-mode"
   ],
   "homepage": "https://github.com/YangZiCong2503416920/Styleophm",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/YangZiCong2503416920/Styleophm.git"
-  },
+  "repository": "https://github.com/YangZiCong2503416920/Styleophm.git",
   "dependencies": {}
 }
