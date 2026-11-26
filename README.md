@@ -20,6 +20,15 @@ Column() { /* ... */ }
 
 ---
 
+## 预览
+
+真机（nova 14 Pro / HarmonyOS 7.0.0）截图，左边是排版刻度与标签，右边是按钮、容器能力与自定义修饰器：
+
+<a href="docs/preview-top.jpg"><img src="docs/preview-top.jpg" width="300" alt="Styleophm 预览 · 上半屏"></a>
+<a href="docs/preview-bottom.jpg"><img src="docs/preview-bottom.jpg" width="300" alt="Styleophm 预览 · 下半屏"></a>
+
+---
+
 ## 为什么不用 stylex.create？
 
 Web 版 StyleX 依赖动态键访问与结构化对象，在 ArkTS 中会触发：
@@ -112,6 +121,8 @@ Styleophm/
 - **边框颜色默认补 `StylexToken.LINE`**：只写 `borderWidth` 不会得到黑边；
 - **`maxLines` 自动配省略号**：默认 `TextOverflow.Ellipsis`，要硬裁切就显式 `ellipsis: false` 或 `overflow: TextOverflow.Clip`；
 - **按钮有按压态**：`applyPressedAttribute` 生效，默认透明度 0.82，可用 `pressedBackground` 换成更深的品牌色。
+
+> **覆盖顺序**：`attributeModifier` 的属性优先级高于链式调用。想改预设的某个属性（例如把卡片内容改成居中），请在 Spec 里给（或另建一个 `StylexBox`），不要指望在 `.attributeModifier(...)` 之后追加同名方法去覆盖——实测会被预设覆盖回去。
 
 ### Token（两级制）
 

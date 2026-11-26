@@ -17,6 +17,7 @@
 - 新增 `PactLayer` / `PactStage` 枚举，`PactTag.forLayer/forStage`、`PactAccent.*` 改为枚举入参（仍兼容字符串）；
 - 新增 `entry` 示例模块（视觉回归页），覆盖排版、标签、按钮、容器能力、自定义修饰器；
 - 新增 `scripts/guard.mjs` 静态守卫与 `.github/workflows/ci.yml`；
+- 新增 `docs/preview-top.jpg` / `docs/preview-bottom.jpg`（真机截图）并在 README 展示；
 - 新增 `LICENSE`（MIT）与 `CHANGELOG.md`；`oh-package.json5` 补齐 `license` / `keywords` / `homepage` / `repository`；`entry` 依赖本库 `file:../styleophm`。
 
 ### Changed
@@ -34,7 +35,8 @@
 - 只传 `borderWidth` 未传 `borderColor` 时，边框会画成默认黑色 —— 现在缺省补 `StylexToken.LINE`；
 - `StylexButton` 此前没有任何按下反馈；
 - `maxLines` 此前是硬裁切，没有省略号；
-- `PactTag.forLayer('政策层')` 这类裸字符串比较拼错时静默落到 `NEUTRAL`，现在有枚举约束。
+- `PactTag.forLayer('政策层')` 这类裸字符串比较拼错时静默落到 `NEUTRAL`，现在有枚举约束；
+- 示例页在 Column 默认 `Center` 下内容居中：`PactBox` 预设补 `alignItems: HorizontalAlign.Start`，`PactText.QUOTE` 补 `align: TextAlign.Start`（真机验证通过）。
 
 ### Visual deltas（预设归一化到 4dp 网格，肉眼几乎无感）
 

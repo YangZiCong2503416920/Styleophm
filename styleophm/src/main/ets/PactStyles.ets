@@ -95,7 +95,8 @@ export class PactText {
   static readonly QUOTE: StylexText = new StylexText({
     size: StylexToken.FONT_BODY_LG,
     color: StylexColor.INK,
-    lineHeight: StylexToken.LINE_LOOSE
+    lineHeight: StylexToken.LINE_LOOSE,
+    align: TextAlign.Start
   });
 
   static readonly LABEL: StylexText = new StylexText({
@@ -131,7 +132,8 @@ export class PactBox {
     paddingTop: StylexToken.SPACE_LG,
     paddingRight: StylexToken.SPACE_LG,
     paddingBottom: StylexToken.SPACE_LG,
-    paddingLeft: StylexToken.SPACE_LG
+    paddingLeft: StylexToken.SPACE_LG,
+    alignItems: HorizontalAlign.Start
   });
 
   static readonly HERO: StylexBox = new StylexBox({
@@ -140,7 +142,8 @@ export class PactBox {
     paddingTop: StylexToken.SPACE_LG,
     paddingRight: StylexToken.SPACE_LG,
     paddingBottom: StylexToken.SPACE_LG,
-    paddingLeft: StylexToken.SPACE_LG
+    paddingLeft: StylexToken.SPACE_LG,
+    alignItems: HorizontalAlign.Start
   });
 
   static readonly SOFT: StylexBox = new StylexBox({
@@ -149,7 +152,8 @@ export class PactBox {
     paddingTop: StylexToken.SPACE_MD,
     paddingRight: StylexToken.SPACE_MD,
     paddingBottom: StylexToken.SPACE_MD,
-    paddingLeft: StylexToken.SPACE_MD
+    paddingLeft: StylexToken.SPACE_MD,
+    alignItems: HorizontalAlign.Start
   });
 
   static readonly QUOTE: StylexBox = new StylexBox({
@@ -160,7 +164,8 @@ export class PactBox {
     paddingBottom: StylexToken.SPACE_LG,
     paddingLeft: StylexToken.SPACE_LG,
     borderWidth: PactMetric.HAIRLINE,
-    borderColor: StylexColor.LINE
+    borderColor: StylexColor.LINE,
+    alignItems: HorizontalAlign.Start
   });
 }
 

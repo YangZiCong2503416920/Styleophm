@@ -33,7 +33,8 @@ const SECTION_BOX: StylexBox = new StylexBox({
   paddingRight: StylexToken.SPACE_LG,
   paddingBottom: StylexToken.SPACE_LG,
   paddingLeft: StylexToken.SPACE_LG,
-  marginBottom: StylexToken.SPACE_MD
+  marginBottom: StylexToken.SPACE_MD,
+  alignItems: HorizontalAlign.Start
 });
 
 const NOTICE_BOX: StylexBox = new StylexBox({
@@ -45,7 +46,8 @@ const NOTICE_BOX: StylexBox = new StylexBox({
   paddingLeft: StylexToken.SPACE_MD,
   borderWidth: 1,
   borderColor: StylexColor.GOLD,
-  marginTop: StylexToken.SPACE_SM
+  marginTop: StylexToken.SPACE_SM,
+  alignItems: HorizontalAlign.Start
 });
 
 const NOTICE_TEXT: StylexText = new StylexText({
@@ -103,7 +105,7 @@ struct Index {
       .justifyContent(FlexAlign.SpaceBetween)
       .alignItems(VerticalAlign.Center)
 
-      Text('ArkUI 类型化 AttributeModifier 样式库 · token 驱动 · 深色自适应')
+      Text('token 驱动 · 类型安全 · 深色自适应')
         .attributeModifier(PactText.CAPTION_ON_DARK)
         .margin({ top: StylexToken.SPACE_XS })
     }
